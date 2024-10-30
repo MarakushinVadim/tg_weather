@@ -17,11 +17,11 @@ async def process_start_command(message: Message):
 
 @dp.message(Command(commands=['help']))
 async def process_help_command(message: Message):
-    await message.answer('заглушка по хэлперу')
+    await message.answer('Чтобы получть прогоноз погоды отправь мне название города')
 
 
 @dp.message()
-async def send_echo(message: Message):
+async def send_weather(message: Message):
     if message.text:
         weather = get_weather(message.text)
         await message.reply(weather)
